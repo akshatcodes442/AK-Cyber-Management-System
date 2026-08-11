@@ -6,18 +6,13 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="AK Cyber - Professional Cyber Cafe and Digital Service Management System">
+    <meta name="theme-color" content="#00ff88">
 
-    <meta name="theme-color"
-          content="#00ff88">
-
-    <title>AK Cyber | Cyber Cafe & Digital Services</title>
+    <title>AK Cyber Management System</title>
 
     <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
@@ -25,419 +20,198 @@
 
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+    <!-- ================================
+         BACKGROUND
+    ================================= -->
 
-    <header class="header">
+    <div class="matrix-bg"></div>
 
-        <div class="container nav-container">
+    <!-- ================================
+         LOGIN CONTAINER
+    ================================= -->
+
+    <main class="login-page">
+
+        <div class="login-card">
 
             <!-- LOGO -->
 
-            <a href="#home" class="logo">
-                <span class="logo-icon">
-                    <i class="fa-solid fa-terminal"></i>
+            <div class="login-logo">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <h1>AK <span>CYBER</span></h1>
+
+                <p>MANAGEMENT SYSTEM</p>
+
+            </div>
+
+
+            <!-- LOGIN HEADER -->
+
+            <div class="login-heading">
+
+                <h2>Welcome Back</h2>
+
+                <p>
+                    Login to access your management dashboard
+                </p>
+
+            </div>
+
+
+            <!-- LOGIN FORM -->
+
+            <form id="loginForm">
+
+                <!-- USERNAME -->
+
+                <div class="input-group">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter username"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="password-toggle"
+                            aria-label="Show password"
+                        >
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REMEMBER -->
+
+                <div class="login-options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                        >
+
+                        <span>Remember me</span>
+
+                    </label>
+
+                    <a href="#" id="forgotPassword">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                    id="loginBtn"
+                >
+
+                    <span>LOGIN</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <!-- STATUS -->
+
+            <div
+                id="loginStatus"
+                class="login-status"
+                aria-live="polite"
+            ></div>
+
+
+            <!-- SECURITY -->
+
+            <div class="security-info">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>
+                    Secure Management Portal
                 </span>
 
-                <span class="logo-text">
-                    AK <strong>CYBER</strong>
-                </span>
-            </a>
+            </div>
 
 
-            <!-- NAVIGATION -->
+            <!-- FOOTER -->
 
-            <nav class="navbar" id="navbar">
+            <div class="login-footer">
 
-                <a href="#home" class="nav-link active">
-                    Home
-                </a>
+                <p>
+                    © 2026 AK Cyber
+                </p>
 
-                <a href="#services" class="nav-link">
-                    Services
-                </a>
+                <span>•</span>
 
-                <a href="#about" class="nav-link">
-                    About
-                </a>
+                <p>
+                    All Rights Reserved
+                </p>
 
-                <a href="#contact" class="nav-link">
-                    Contact
-                </a>
-
-            </nav>
-
-
-            <!-- MOBILE MENU -->
-
-            <button
-                class="menu-btn"
-                id="menuBtn"
-                aria-label="Open navigation menu">
-
-                <i class="fa-solid fa-bars"></i>
-
-            </button>
+            </div>
 
         </div>
-
-    </header>
-
-
-    <!-- =========================
-         HERO
-    ========================== -->
-
-    <main>
-
-        <section class="hero" id="home">
-
-            <div class="container hero-content">
-
-                <div class="hero-text">
-
-                    <p class="hero-tag">
-                        <i class="fa-solid fa-code"></i>
-                        DIGITAL SERVICE CENTER
-                    </p>
-
-                    <h1>
-                        WELCOME TO
-                        <span>AK CYBER</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        Fast, reliable and professional cyber cafe
-                        and digital services for everyone.
-                    </p>
-
-                    <div class="hero-buttons">
-
-                        <a href="#services"
-                           class="btn btn-primary">
-
-                            <i class="fa-solid fa-bolt"></i>
-                            Explore Services
-
-                        </a>
-
-                        <a href="#contact"
-                           class="btn btn-outline">
-
-                            <i class="fa-solid fa-phone"></i>
-                            Contact Us
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="hero-card">
-
-                    <div class="terminal">
-
-                        <div class="terminal-header">
-
-                            <span></span>
-                            <span></span>
-                            <span></span>
-
-                        </div>
-
-                        <div class="terminal-body">
-
-                            <p>
-                                <span class="terminal-green">
-                                    ak@cyber
-                                </span>:~$
-                                system --status
-                            </p>
-
-                            <p class="status">
-                                ● SYSTEM ONLINE
-                            </p>
-
-                            <p>
-                                Services: ACTIVE
-                            </p>
-
-                            <p>
-                                Security: ENABLED
-                            </p>
-
-                            <p>
-                                Ready to serve...
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             SERVICES
-        ========================== -->
-
-        <section class="services section"
-                 id="services">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="section-tag">
-                        &lt; Our Services /&gt;
-                    </p>
-
-                    <h2>
-                        Digital Services
-                    </h2>
-
-                    <p>
-                        Everything you need under one roof.
-                    </p>
-
-                </div>
-
-
-                <div class="services-grid">
-
-                    <article class="service-card">
-
-                        <i class="fa-solid fa-globe"></i>
-
-                        <h3>
-                            Website Development
-                        </h3>
-
-                        <p>
-                            Modern and responsive websites
-                            for businesses and individuals.
-                        </p>
-
-                    </article>
-
-
-                    <article class="service-card">
-
-                        <i class="fa-solid fa-file-lines"></i>
-
-                        <h3>
-                            Online Forms
-                        </h3>
-
-                        <p>
-                            Online applications, registrations
-                            and government forms.
-                        </p>
-
-                    </article>
-
-
-                    <article class="service-card">
-
-                        <i class="fa-solid fa-id-card"></i>
-
-                        <h3>
-                            PAN & Aadhaar Services
-                        </h3>
-
-                        <p>
-                            Assistance with PAN and Aadhaar
-                            related digital services.
-                        </p>
-
-                    </article>
-
-
-                    <article class="service-card">
-
-                        <i class="fa-solid fa-building-columns"></i>
-
-                        <h3>
-                            Banking Services
-                        </h3>
-
-                        <p>
-                            Digital banking assistance and
-                            online financial services.
-                        </p>
-
-                    </article>
-
-
-                    <article class="service-card">
-
-                        <i class="fa-solid fa-print"></i>
-
-                        <h3>
-                            Print & Scan
-                        </h3>
-
-                        <p>
-                            High-quality printing, scanning
-                            and document services.
-                        </p>
-
-                    </article>
-
-
-                    <article class="service-card">
-
-                        <i class="fa-solid fa-graduation-cap"></i>
-
-                        <h3>
-                            Computer Courses
-                        </h3>
-
-                        <p>
-                            Practical computer training for
-                            students and beginners.
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             ABOUT
-        ========================== -->
-
-        <section class="about section"
-                 id="about">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="section-tag">
-                        &lt; About AK Cyber /&gt;
-                    </p>
-
-                    <h2>
-                        Technology Made Simple
-                    </h2>
-
-                </div>
-
-
-                <div class="about-content">
-
-                    <p>
-                        AK Cyber is a professional cyber cafe and
-                        digital service center focused on providing
-                        fast, reliable and convenient technology
-                        services.
-                    </p>
-
-                    <p>
-                        From online applications and document
-                        services to website development and
-                        computer training, our goal is to make
-                        digital services simple and accessible.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CONTACT
-        ========================== -->
-
-        <section class="contact section"
-                 id="contact">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="section-tag">
-                        &lt; Contact /&gt;
-                    </p>
-
-                    <h2>
-                        Get In Touch
-                    </h2>
-
-                    <p>
-                        Need a digital service? Contact AK Cyber.
-                    </p>
-
-                </div>
-
-
-                <div class="contact-actions">
-
-                    <a href="tel:+918058586232"
-                       class="btn btn-primary">
-
-                        <i class="fa-solid fa-phone"></i>
-                        Call Now
-
-                    </a>
-
-                    <a href="https://wa.me/918058586232"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="btn btn-outline">
-
-                        <i class="fa-brands fa-whatsapp"></i>
-                        WhatsApp
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
 
     </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer class="footer">
-
-        <div class="container">
-
-            <p>
-                © 2026 AK Cyber. All Rights Reserved.
-            </p>
-
-            <p>
-                Built with
-                <span class="footer-highlight">
-                    HTML • CSS • JavaScript
-                </span>
-            </p>
-
-        </div>
-
-    </footer>
-
-
-    <!-- Main JavaScript -->
+    <!-- ================================
+         MAIN SCRIPT
+    ================================= -->
 
     <script src="script.js"></script>
 

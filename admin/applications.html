@@ -1,0 +1,868 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#c86b98">
+
+    <title>AK Cyber Management System | Applications</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Dashboard CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <!-- Applications CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/applications.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SIDEBAR OVERLAY
+===================================================== -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay">
+</div>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside
+    class="sidebar"
+    id="sidebar">
+
+
+    <!-- LOGO -->
+
+    <div class="sidebar-logo">
+
+        <div class="sidebar-logo-icon">
+            <i class="fa-solid fa-leaf"></i>
+        </div>
+
+        <div>
+            <h2>
+                AK <span>CYBER</span>
+            </h2>
+
+            <p>
+                MANAGEMENT
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="sidebar-nav">
+
+        <p class="nav-title">
+            MAIN MENU
+        </p>
+
+
+        <a
+            href="dashboard.html"
+            class="nav-item">
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a
+            href="customers.html"
+            class="nav-item">
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>
+                Customers
+            </span>
+
+        </a>
+
+
+        <a
+            href="applications.html"
+            class="nav-item active">
+
+            <i class="fa-solid fa-file-invoice"></i>
+
+            <span>
+                Applications
+            </span>
+
+        </a>
+
+
+        <a
+            href="payments.html"
+            class="nav-item">
+
+            <i class="fa-solid fa-money-bill-wave"></i>
+
+            <span>
+                Payments
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item">
+
+            <i class="fa-solid fa-print"></i>
+
+            <span>
+                Print & Scan
+            </span>
+
+        </a>
+
+
+        <p class="nav-title">
+            MANAGEMENT
+        </p>
+
+
+        <a
+            href="#"
+            class="nav-item">
+
+            <i class="fa-solid fa-box"></i>
+
+            <span>
+                Services
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span>
+                Reports
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item">
+
+            <i class="fa-solid fa-gear"></i>
+
+            <span>
+                Settings
+            </span>
+
+        </a>
+
+    </nav>
+
+
+    <!-- LOGOUT -->
+
+    <div class="sidebar-bottom">
+
+        <button
+            type="button"
+            id="logoutBtn"
+            class="logout-btn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+    </div>
+
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main-content">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <button
+            type="button"
+            id="menuBtn"
+            class="menu-btn">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <div class="page-title">
+
+            <h1>
+                Applications
+            </h1>
+
+            <p>
+                Manage customer applications
+            </p>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+            <button
+                type="button"
+                class="icon-btn">
+
+                <i class="fa-regular fa-bell"></i>
+
+                <span class="notification-dot"></span>
+
+            </button>
+
+
+            <div class="admin-profile">
+
+                <div class="profile-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="profile-info">
+
+                    <strong>
+                        Admin
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         BODY
+    ================================================= -->
+
+    <section class="dashboard-body">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="application-page-header">
+
+            <div>
+
+                <span class="section-label">
+                    APPLICATION MANAGEMENT
+                </span>
+
+                <h2>
+                    Applications
+                </h2>
+
+                <p>
+                    Track and manage customer applications.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="add-application-btn"
+                id="addApplicationBtn">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Application
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================= -->
+
+        <div class="application-stats">
+
+
+            <div class="application-stat-card">
+
+                <div class="application-stat-icon pink">
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Applications
+                    </span>
+
+                    <strong id="totalApplications">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="application-stat-card">
+
+                <div class="application-stat-icon orange">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        Pending
+                    </span>
+
+                    <strong id="pendingApplications">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="application-stat-card">
+
+                <div class="application-stat-icon green">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        Completed
+                    </span>
+
+                    <strong id="completedApplications">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             SEARCH / FILTER
+        ================================================= -->
+
+        <div class="application-toolbar">
+
+
+            <div class="application-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="applicationSearch"
+                    placeholder="Search application, customer or service..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <select
+                id="applicationStatusFilter"
+                class="application-filter">
+
+                <option value="all">
+                    All Status
+                </option>
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+                <option value="Processing">
+                    Processing
+                </option>
+
+                <option value="Completed">
+                    Completed
+                </option>
+
+                <option value="Rejected">
+                    Rejected
+                </option>
+
+            </select>
+
+
+        </div>
+
+
+        <!-- =================================================
+             APPLICATION TABLE
+        ================================================= -->
+
+        <div class="application-table-card">
+
+
+            <div class="table-header">
+
+                <div>
+
+                    <h3>
+                        Application List
+                    </h3>
+
+                    <p>
+                        All customer applications
+                    </p>
+
+                </div>
+
+
+                <span
+                    class="application-record-count"
+                    id="applicationRecordCount">
+
+                    0 Records
+
+                </span>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Application
+                            </th>
+
+                            <th>
+                                Customer
+                            </th>
+
+                            <th>
+                                Service
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="applicationTableBody"></tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- EMPTY STATE -->
+
+            <div
+                class="application-empty"
+                id="applicationEmpty">
+
+                <div class="empty-application-icon">
+
+                    <i class="fa-solid fa-file-circle-plus"></i>
+
+                </div>
+
+                <h3>
+                    No applications found
+                </h3>
+
+                <p>
+                    Add your first application to
+                    start tracking applications.
+                </p>
+
+                <button
+                    type="button"
+                    class="empty-application-btn"
+                    id="emptyApplicationBtn">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add First Application
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     APPLICATION MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="applicationModal">
+
+
+    <div class="application-modal">
+
+
+        <!-- HEADER -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="modal-label">
+                    APPLICATION DETAILS
+                </span>
+
+                <h2 id="applicationModalTitle">
+                    Add Application
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeApplicationModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form id="applicationForm">
+
+
+            <input
+                type="hidden"
+                id="applicationId"
+            >
+
+
+            <!-- APPLICATION NUMBER -->
+
+            <div class="form-group">
+
+                <label for="applicationNumber">
+                    Application Number
+                </label>
+
+                <div class="form-input">
+
+                    <i class="fa-solid fa-hashtag"></i>
+
+                    <input
+                        type="text"
+                        id="applicationNumber"
+                        placeholder="Example: APP-1001"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- CUSTOMER -->
+
+            <div class="form-group">
+
+                <label for="applicationCustomer">
+                    Customer Name
+                </label>
+
+                <div class="form-input">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <select
+                        id="applicationCustomer"
+                        required>
+
+                        <option value="">
+                            Select Customer
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE -->
+
+            <div class="form-group">
+
+                <label for="applicationService">
+                    Service
+                </label>
+
+                <div class="form-input">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                    <select
+                        id="applicationService"
+                        required>
+
+                        <option value="">
+                            Select Service
+                        </option>
+
+                        <option value="PAN Card">
+                            PAN Card
+                        </option>
+
+                        <option value="Aadhaar Service">
+                            Aadhaar Service
+                        </option>
+
+                        <option value="Online Form">
+                            Online Form
+                        </option>
+
+                        <option value="Banking Service">
+                            Banking Service
+                        </option>
+
+                        <option value="Government Form">
+                            Government Form
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- DATE -->
+
+            <div class="form-group">
+
+                <label for="applicationDate">
+                    Application Date
+                </label>
+
+                <div class="form-input">
+
+                    <i class="fa-solid fa-calendar"></i>
+
+                    <input
+                        type="date"
+                        id="applicationDate"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <div class="form-group">
+
+                <label for="applicationStatus">
+                    Status
+                </label>
+
+                <div class="form-input">
+
+                    <i class="fa-solid fa-spinner"></i>
+
+                    <select
+                        id="applicationStatus"
+                        required>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Processing">
+                            Processing
+                        </option>
+
+                        <option value="Completed">
+                            Completed
+                        </option>
+
+                        <option value="Rejected">
+                            Rejected
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- REMARKS -->
+
+            <div class="form-group">
+
+                <label for="applicationRemarks">
+                    Remarks
+                </label>
+
+                <div class="form-input">
+
+                    <i class="fa-solid fa-note-sticky"></i>
+
+                    <textarea
+                        id="applicationRemarks"
+                        rows="3"
+                        placeholder="Add any remarks..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelApplicationModal">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="save-application-btn">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Save Application
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="../js/dashboard.js"></script>
+
+<script src="../js/applications.js"></script>
+
+
+</body>
+
+</html>

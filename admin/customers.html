@@ -1,0 +1,839 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#c86b98">
+
+    <title>
+        AK Cyber Management System | Customers
+    </title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Dashboard CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <!-- Customers CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/customers.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     APP
+===================================================== -->
+
+<div class="app">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="sidebar-logo">
+
+            <div class="sidebar-logo-icon">
+
+                <i class="fa-solid fa-leaf"></i>
+
+            </div>
+
+            <div>
+
+                <h2>
+                    AK <span>CYBER</span>
+                </h2>
+
+                <p>
+                    MANAGEMENT
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="dashboard.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="customers.html"
+                class="nav-item active">
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+                    Customers
+                </span>
+
+            </a>
+
+
+            <a
+                href="applications.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-file-invoice"></i>
+
+                <span>
+                    Applications
+                </span>
+
+            </a>
+
+
+            <a
+                href="payments.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                <span>
+                    Payments
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item">
+
+                <i class="fa-solid fa-print"></i>
+
+                <span>
+                    Print & Scan
+                </span>
+
+            </a>
+
+
+            <p class="nav-title">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="#"
+                class="nav-item">
+
+                <i class="fa-solid fa-box"></i>
+
+                <span>
+                    Services
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- LOGOUT -->
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                id="logoutBtn"
+                class="logout-btn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+
+            <button
+                type="button"
+                id="menuBtn"
+                class="menu-btn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div class="page-title">
+
+                <h1>
+                    Customers
+                </h1>
+
+                <p>
+                    Manage your customer records
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="notificationBtn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span
+                        class="notification-dot">
+                    </span>
+
+                </button>
+
+
+                <div class="admin-profile">
+
+                    <div class="profile-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             CUSTOMER CONTENT
+        ================================================== -->
+
+        <section class="dashboard-body">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="customer-page-header">
+
+                <div>
+
+                    <span class="section-label">
+                        CUSTOMER MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Customer Records
+                    </h2>
+
+                    <p>
+                        Add, search and manage your
+                        customer information.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="add-customer-btn"
+                    id="addCustomerBtn">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    <span>
+                        Add Customer
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CUSTOMER STATISTICS
+            ================================================== -->
+
+            <div class="customer-stats">
+
+
+                <div class="customer-stat-card">
+
+                    <div class="customer-stat-icon pink">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Customers
+                        </span>
+
+                        <strong id="totalCustomers">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="customer-stat-card">
+
+                    <div class="customer-stat-icon green">
+
+                        <i class="fa-solid fa-user-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Active Customers
+                        </span>
+
+                        <strong id="activeCustomers">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="customer-stat-card">
+
+                    <div class="customer-stat-icon purple">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            New This Month
+                        </span>
+
+                        <strong id="monthlyCustomers">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SEARCH
+            ================================================== -->
+
+            <div class="customer-toolbar">
+
+
+                <div class="customer-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="customerSearch"
+                        placeholder="Search by name or mobile number..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <select
+                    id="customerFilter"
+                    class="customer-filter">
+
+                    <option value="all">
+                        All Customers
+                    </option>
+
+                    <option value="today">
+                        Added Today
+                    </option>
+
+                    <option value="month">
+                        This Month
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CUSTOMER TABLE
+            ================================================== -->
+
+            <div class="customer-table-card">
+
+
+                <div class="table-header">
+
+                    <div>
+
+                        <h3>
+                            Customer List
+                        </h3>
+
+                        <p>
+                            All registered customers
+                        </p>
+
+                    </div>
+
+
+                    <span
+                        class="record-count"
+                        id="recordCount">
+
+                        0 Records
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Mobile
+                                </th>
+
+                                <th>
+                                    ID / Aadhaar
+                                </th>
+
+                                <th>
+                                    Registration Date
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="customerTableBody">
+                        </tbody>
+
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- EMPTY STATE -->
+
+                <div
+                    class="customer-empty"
+                    id="customerEmpty">
+
+                    <div class="empty-customer-icon">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+
+                    <h3>
+                        No customers found
+                    </h3>
+
+
+                    <p>
+                        Add your first customer to
+                        start managing records.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="empty-add-btn"
+                        id="emptyAddBtn">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add First Customer
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     CUSTOMER MODAL
+====================================================== -->
+
+<div
+    class="modal-overlay"
+    id="customerModalOverlay"
+    aria-hidden="true">
+
+
+    <div
+        class="customer-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle">
+
+
+        <!-- MODAL HEADER -->
+
+        <div class="modal-header">
+
+
+            <div>
+
+                <span class="modal-label">
+                    CUSTOMER DETAILS
+                </span>
+
+
+                <h2 id="modalTitle">
+                    Add Customer
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeModalBtn"
+                aria-label="Close">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- CUSTOMER FORM -->
+
+        <form id="customerForm">
+
+
+            <input
+                type="hidden"
+                id="customerId"
+            >
+
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label for="customerName">
+                    Full Name
+                </label>
+
+
+                <div class="form-input">
+
+                    <i class="fa-solid fa-user"></i>
+
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Enter customer name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MOBILE -->
+
+            <div class="form-group">
+
+                <label for="customerMobile">
+                    Mobile Number
+                </label>
+
+
+                <div class="form-input">
+
+                    <i class="fa-solid fa-phone"></i>
+
+
+                    <input
+                        type="tel"
+                        id="customerMobile"
+                        placeholder="Enter 10 digit mobile number"
+                        maxlength="10"
+                        inputmode="numeric"
+                        autocomplete="tel"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ID -->
+
+            <div class="form-group">
+
+                <label for="customerIdNumber">
+                    Aadhaar / ID Number
+                </label>
+
+
+                <div class="form-input">
+
+                    <i class="fa-solid fa-id-card"></i>
+
+
+                    <input
+                        type="text"
+                        id="customerIdNumber"
+                        placeholder="Enter ID number"
+                        maxlength="20"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ADDRESS -->
+
+            <div class="form-group">
+
+                <label for="customerAddress">
+                    Address
+                </label>
+
+
+                <div class="form-input textarea-input">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+
+                    <textarea
+                        id="customerAddress"
+                        rows="3"
+                        placeholder="Enter customer address"
+                        autocomplete="street-address"
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FORM ACTIONS -->
+
+            <div class="modal-actions">
+
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelModalBtn">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="save-customer-btn">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Save Customer
+
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script
+    src="../js/customers.js"
+    defer>
+</script>
+
+
+</body>
+
+</html>
