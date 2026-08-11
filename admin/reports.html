@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color"
+      content="#c86b98">
+
+<title>
+    AK Cyber Management System | Reports
+</title>
+
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+<!-- Reports CSS -->
+<link
+    rel="stylesheet"
+    href="../css/reports.css"
+>
+```
+
+</head>
+
+<body>
+
+```
+<!-- =====================================================
+     MOBILE OVERLAY
+====================================================== -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay">
+</div>
+
+
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
+
+<aside
+    class="sidebar"
+    id="sidebar">
+
+    <!-- LOGO -->
+
+    <div class="sidebar-logo">
+
+        <div class="sidebar-logo-icon">
+
+            <i class="fa-solid fa-leaf"></i>
+
+        </div>
+
+        <div>
+
+            <h2 data-business-name>
+    AK CYBER
+</h2>
+
+            <p>
+                MANAGEMENT
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="sidebar-nav">
+
+        <p class="nav-title">
+            MAIN MENU
+        </p>
+
+
+        <a
+            href="dashboard.html"
+            class="nav-item">
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a
+            href="customers.html"
+            class="nav-item">
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>
+                Customers
+            </span>
+
+        </a>
+
+
+        <a
+            href="applications.html"
+            class="nav-item">
+
+            <i class="fa-solid fa-file-invoice"></i>
+
+            <span>
+                Applications
+            </span>
+
+        </a>
+
+
+        <a
+            href="payments.html"
+            class="nav-item">
+
+            <i class="fa-solid fa-money-bill-wave"></i>
+
+            <span>
+                Payments
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item">
+
+            <i class="fa-solid fa-print"></i>
+
+            <span>
+                Print & Scan
+            </span>
+
+        </a>
+
+
+        <p class="nav-title">
+            MANAGEMENT
+        </p>
+
+
+        <a
+            href="service.html"
+            class="nav-item">
+
+            <i class="fa-solid fa-box"></i>
+
+            <span>
+                Services
+            </span>
+
+        </a>
+
+
+        <a
+            href="reports.html"
+            class="nav-item active">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span>
+                Reports
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item">
+
+            <i class="fa-solid fa-gear"></i>
+
+            <span>
+                Settings
+            </span>
+
+        </a>
+
+    </nav>
+
+
+    <!-- SIDEBAR BOTTOM -->
+
+    <div class="sidebar-bottom">
+
+        <button
+            id="logoutBtn"
+            class="logout-btn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+
+<main class="main-content">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <button
+            id="menuBtn"
+            class="menu-btn">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <div class="page-title">
+
+            <h1>
+                Reports
+            </h1>
+
+            <p>
+                Analyze your cyber cafe business
+            </p>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+            <button class="icon-btn">
+
+                <i class="fa-regular fa-bell"></i>
+
+                <span class="notification-dot"></span>
+
+            </button>
+
+
+            <div class="admin-profile">
+
+                <div class="profile-avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+                <div class="profile-info">
+
+                   <strong data-admin-name>
+    Admin
+</strong>
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         REPORTS BODY
+    ================================================== -->
+
+    <section class="reports-body">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="reports-header">
+
+            <div>
+
+                <span class="section-small">
+                    BUSINESS ANALYTICS
+                </span>
+
+                <h2>
+                    Reports & Analytics
+                </h2>
+
+                <p>
+                    Track your business performance and
+                    daily activities.
+                </p>
+
+            </div>
+
+
+            <div class="report-actions">
+
+                <button
+                    class="date-btn"
+                    id="todayBtn">
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    Today
+
+                </button>
+
+
+                <button
+                    class="export-btn"
+                    id="exportReportBtn">
+
+                    <i class="fa-solid fa-download"></i>
+
+                    Export Report
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUMMARY CARDS -->
+
+        <div class="report-stats">
+
+
+            <div class="report-stat-card">
+
+                <div class="report-stat-icon pink">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Customers
+                    </span>
+
+                    <strong id="reportCustomers">
+                        0
+                    </strong>
+
+                    <small>
+                        Registered customers
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="report-stat-card">
+
+                <div class="report-stat-icon purple">
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Applications
+                    </span>
+
+                    <strong id="reportApplications">
+                        0
+                    </strong>
+
+                    <small>
+                        Total applications
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="report-stat-card">
+
+                <div class="report-stat-icon green">
+
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Income
+                    </span>
+
+                    <strong id="reportIncome">
+                        ₹0
+                    </strong>
+
+                    <small>
+                        Recorded payments
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="report-stat-card">
+
+                <div class="report-stat-icon orange">
+
+                    <i class="fa-solid fa-print"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Print Jobs
+                    </span>
+
+                    <strong id="reportPrintJobs">
+                        0
+                    </strong>
+
+                    <small>
+                        Total print jobs
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- REPORT GRID -->
+
+        <div class="reports-grid">
+
+
+            <!-- BUSINESS OVERVIEW -->
+
+            <div class="report-card overview-card">
+
+                <div class="report-card-header">
+
+                    <div>
+
+                        <h3>
+                            Business Overview
+                        </h3>
+
+                        <p>
+                            Current business statistics
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="overview-list">
+
+
+                    <div class="overview-item">
+
+                        <div class="overview-icon pink">
+
+                            <i class="fa-solid fa-user-group"></i>
+
+                        </div>
+
+                        <div class="overview-info">
+
+                            <span>
+                                Customers
+                            </span>
+
+                            <strong id="overviewCustomers">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <div class="overview-icon purple">
+
+                            <i class="fa-solid fa-file-circle-check"></i>
+
+                        </div>
+
+                        <div class="overview-info">
+
+                            <span>
+                                Applications
+                            </span>
+
+                            <strong id="overviewApplications">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <div class="overview-icon green">
+
+                            <i class="fa-solid fa-wallet"></i>
+
+                        </div>
+
+                        <div class="overview-info">
+
+                            <span>
+                                Payments
+                            </span>
+
+                            <strong id="overviewPayments">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <div class="overview-icon orange">
+
+                            <i class="fa-solid fa-print"></i>
+
+                        </div>
+
+                        <div class="overview-info">
+
+                            <span>
+                                Print & Scan
+                            </span>
+
+                            <strong id="overviewPrints">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK REPORTS -->
+
+            <div class="report-card">
+
+                <div class="report-card-header">
+
+                    <div>
+
+                        <h3>
+                            Quick Reports
+                        </h3>
+
+                        <p>
+                            Frequently used reports
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-reports">
+
+
+                    <button
+                        class="quick-report"
+                        data-report="customers">
+
+                        <span class="quick-report-icon pink">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </span>
+
+                        <span>
+                            Customer Report
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                    <button
+                        class="quick-report"
+                        data-report="applications">
+
+                        <span class="quick-report-icon purple">
+
+                            <i class="fa-solid fa-file-lines"></i>
+
+                        </span>
+
+                        <span>
+                            Application Report
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                    <button
+                        class="quick-report"
+                        data-report="payments">
+
+                        <span class="quick-report-icon green">
+
+                            <i class="fa-solid fa-money-bill-wave"></i>
+
+                        </span>
+
+                        <span>
+                            Payment Report
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                    <button
+                        class="quick-report"
+                        data-report="print">
+
+                        <span class="quick-report-icon orange">
+
+                            <i class="fa-solid fa-print"></i>
+
+                        </span>
+
+                        <span>
+                            Print Report
+                        </span>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ACTIVITY CARD -->
+
+        <div class="report-card activity-card">
+
+            <div class="report-card-header">
+
+                <div>
+
+                    <h3>
+                        Recent Activity
+                    </h3>
+
+                    <p>
+                        Latest business activities
+                    </p>
+
+                </div>
+
+                <button
+                    class="refresh-btn"
+                    id="refreshReport">
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Refresh
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="activity-empty"
+                id="activityEmpty">
+
+                <div class="activity-empty-icon">
+
+                    <i class="fa-regular fa-folder-open"></i>
+
+                </div>
+
+                <h4>
+                    No activity yet
+                </h4>
+
+                <p>
+                    Business activities will appear
+                    here as data is added.
+                </p>
+
+            </div>
+
+
+            <div
+                class="activity-list"
+                id="activityList">
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<!-- REPORTS SCRIPT -->
+
+<script src="../js/reports.js"></script>
+
+<script src="../js/common.js"></script>
+</body>
+
+</html>

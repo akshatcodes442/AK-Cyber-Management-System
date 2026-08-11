@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#c86b98">
+
+    <title>
+        AK Cyber Management System | Settings
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/settings.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- MOBILE OVERLAY -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay">
+    </div>
+
+
+    <!-- SIDEBAR -->
+
+    <aside
+        class="sidebar"
+        id="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="sidebar-logo-icon">
+
+                <i class="fa-solid fa-leaf"></i>
+
+            </div>
+
+            <div>
+
+                <h2 data-business-name>
+    AK CYBER
+</h2>
+
+                <p>
+                    MANAGEMENT
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="dashboard.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="customers.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+                    Customers
+                </span>
+
+            </a>
+
+
+            <a
+                href="applications.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-file-invoice"></i>
+
+                <span>
+                    Applications
+                </span>
+
+            </a>
+
+
+            <a
+                href="payments.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                <span>
+                    Payments
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item">
+
+                <i class="fa-solid fa-print"></i>
+
+                <span>
+                    Print & Scan
+                </span>
+
+            </a>
+
+
+            <p class="nav-title">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="service.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-box"></i>
+
+                <span>
+                    Services
+                </span>
+
+            </a>
+
+
+            <a
+                href="reports.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <a
+                href="settings.html"
+                class="nav-item active">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                id="logoutBtn"
+                class="logout-btn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button
+                id="menuBtn"
+                class="menu-btn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div class="page-title">
+
+                <h1>
+                    Settings
+                </h1>
+
+                <p>
+                    Manage your account and system settings
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button
+                    class="icon-btn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span
+                        class="notification-dot">
+                    </span>
+
+                </button>
+
+
+                <div class="admin-profile">
+
+                    <div class="profile-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong data-admin-name>
+    Admin
+</strong>
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- SETTINGS BODY -->
+
+        <section class="settings-body">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="settings-header">
+
+                <div>
+
+                    <span class="section-small">
+                        MANAGEMENT
+                    </span>
+
+                    <h2>
+                        System Settings
+                    </h2>
+
+                    <p>
+                        Manage your profile, business and system preferences.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SETTINGS GRID -->
+
+            <div class="settings-grid">
+
+
+                <!-- PROFILE SETTINGS -->
+
+                <div class="settings-card">
+
+                    <div class="settings-card-header">
+
+                        <div class="settings-card-icon pink">
+
+                            <i class="fa-solid fa-user"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Profile Settings
+                            </h3>
+
+                            <p>
+                                Manage administrator information
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-form">
+
+                        <div class="form-group">
+
+                            <label>
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="adminName"
+                                value="Admin"
+                                placeholder="Enter your name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="adminEmail"
+                                placeholder="Enter email address"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="adminPhone"
+                                placeholder="Enter phone number"
+                            >
+
+                        </div>
+
+
+                        <button
+                            class="save-btn"
+                            id="saveProfileBtn">
+
+                            <i class="fa-solid fa-floppy-disk"></i>
+
+                            Save Profile
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUSINESS SETTINGS -->
+
+                <div class="settings-card">
+
+                    <div class="settings-card-header">
+
+                        <div class="settings-card-icon purple">
+
+                            <i class="fa-solid fa-building"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Business Settings
+                            </h3>
+
+                            <p>
+                                Manage your cyber cafe information
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-form">
+
+                        <div class="form-group">
+
+                            <label>
+                                Business Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="businessName"
+                                value="AK CYBER"
+                                placeholder="Business name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Business Phone
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="businessPhone"
+                                placeholder="Business phone"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Business Address
+                            </label>
+
+                            <textarea
+                                id="businessAddress"
+                                rows="3"
+                                placeholder="Enter business address">
+                            </textarea>
+
+                        </div>
+
+
+                        <button
+                            class="save-btn purple-btn"
+                            id="saveBusinessBtn">
+
+                            <i class="fa-solid fa-floppy-disk"></i>
+
+                            Save Business
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SYSTEM SETTINGS -->
+
+                <div class="settings-card">
+
+                    <div class="settings-card-header">
+
+                        <div class="settings-card-icon green">
+
+                            <i class="fa-solid fa-sliders"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                System Preferences
+                            </h3>
+
+                            <p>
+                                Configure system behaviour
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-options">
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <strong>
+                                    Notifications
+                                </strong>
+
+                                <span>
+                                    Receive system notifications
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="notificationsToggle"
+                                    checked
+                                >
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <strong>
+                                    Auto Save
+                                </strong>
+
+                                <span>
+                                    Automatically save changes
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="autoSaveToggle"
+                                    checked
+                                >
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="setting-option">
+
+                            <div>
+
+                                <strong>
+                                    Confirmation Alerts
+                                </strong>
+
+                                <span>
+                                    Ask before deleting records
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input
+                                    type="checkbox"
+                                    id="confirmToggle"
+                                    checked
+                                >
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- SECURITY SETTINGS -->
+
+                <div class="settings-card">
+
+                    <div class="settings-card-header">
+
+                        <div class="settings-card-icon orange">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Security
+                            </h3>
+
+                            <p>
+                                Manage account security
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="security-content">
+
+
+                        <div class="security-item">
+
+                            <div class="security-icon">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Password
+                                </strong>
+
+                                <span>
+                                    Update your administrator password
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="security-btn"
+                            id="changePasswordBtn">
+
+                            Change Password
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+
+                        <div class="security-item">
+
+                            <div class="security-icon">
+
+                                <i class="fa-solid fa-database"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Local Data
+                                </strong>
+
+                                <span>
+                                    Manage locally stored system data
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="danger-btn"
+                            id="clearDataBtn">
+
+                            <i class="fa-solid fa-trash"></i>
+
+                            Clear Local Data
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="../js/settings.js"></script>
+    <script src="../js/common.js"></script>
+
+</body>
+
+</html>

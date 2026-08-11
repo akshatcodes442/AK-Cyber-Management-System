@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color"
+      content="#c86b98">
+
+<title>AK Cyber Management System | Print & Scan</title>
+
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+<!-- Print & Scan CSS -->
+<link
+    rel="stylesheet"
+    href="../css/print-scan.css"
+>
+
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     MOBILE OVERLAY
+====================================================== -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay">
+</div>
+
+
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
+
+<aside
+    class="sidebar"
+    id="sidebar">
+
+    <!-- LOGO -->
+
+    <div class="sidebar-logo">
+
+        <div class="sidebar-logo-icon">
+            <i class="fa-solid fa-leaf"></i>
+        </div>
+
+        <div>
+            <h2 data-business-name>
+    AK CYBER
+</h2>
+            <p>
+                MANAGEMENT
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="sidebar-nav">
+
+        <p class="nav-title">
+            MAIN MENU
+        </p>
+
+
+        <a
+            href="dashboard.html"
+            class="nav-item">
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a
+            href="customers.html"
+            class="nav-item">
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>
+                Customers
+            </span>
+
+        </a>
+
+
+        <a
+            href="applications.html"
+            class="nav-item">
+
+            <i class="fa-solid fa-file-invoice"></i>
+
+            <span>
+                Applications
+            </span>
+
+        </a>
+
+
+        <a
+            href="payments.html"
+            class="nav-item">
+
+            <i class="fa-solid fa-money-bill-wave"></i>
+
+            <span>
+                Payments
+            </span>
+
+        </a>
+
+
+        <a
+            href="print-scan.html"
+            class="nav-item active">
+
+            <i class="fa-solid fa-print"></i>
+
+            <span>
+                Print & Scan
+            </span>
+
+        </a>
+
+
+        <p class="nav-title">
+            MANAGEMENT
+        </p>
+
+
+        <a
+            href="service.html"
+            class="nav-item">
+
+            <i class="fa-solid fa-box"></i>
+
+            <span>
+                Services
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span>
+                Reports
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item">
+
+            <i class="fa-solid fa-gear"></i>
+
+            <span>
+                Settings
+            </span>
+
+        </a>
+
+    </nav>
+
+
+    <!-- SIDEBAR BOTTOM -->
+
+    <div class="sidebar-bottom">
+
+        <button
+            id="logoutBtn"
+            class="logout-btn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+
+<main class="main-content">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <button
+            id="menuBtn"
+            class="menu-btn">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <div class="page-title">
+
+            <h1>
+                Print & Scan
+            </h1>
+
+            <p>
+                Manage printing and scanning jobs
+            </p>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+            <button class="icon-btn">
+
+                <i class="fa-regular fa-bell"></i>
+
+                <span class="notification-dot"></span>
+
+            </button>
+
+
+            <div class="admin-profile">
+
+                <div class="profile-avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+                <div class="profile-info">
+
+                   <strong data-admin-name>
+    Admin
+</strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         PRINT & SCAN BODY
+    ================================================== -->
+
+    <section class="print-body">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="print-header">
+
+            <div>
+
+                <span class="section-small">
+                    PRINT & SCAN
+                </span>
+
+                <h2>
+                    Print & Scan Management
+                </h2>
+
+                <p>
+                    Manage customer printing and scanning
+                    jobs from one place.
+                </p>
+
+            </div>
+
+
+            <button
+                class="add-print-btn"
+                id="addPrintJobBtn">
+
+                <i class="fa-solid fa-plus"></i>
+
+                New Print Job
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <div class="print-stats">
+
+
+            <!-- TOTAL -->
+
+            <div class="print-stat-card">
+
+                <div class="print-stat-icon pink">
+
+                    <i class="fa-solid fa-print"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Jobs
+                    </span>
+
+                    <strong id="totalPrintJobs">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- TODAY -->
+
+            <div class="print-stat-card">
+
+                <div class="print-stat-icon purple">
+
+                    <i class="fa-solid fa-calendar-day"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Today's Jobs
+                    </span>
+
+                    <strong id="todayPrintJobs">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- INCOME -->
+
+            <div class="print-stat-card">
+
+                <div class="print-stat-icon green">
+
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Today's Income
+                    </span>
+
+                    <strong id="todayPrintIncome">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCAN -->
+
+            <div class="print-stat-card">
+
+                <div class="print-stat-icon orange">
+
+                    <i class="fa-solid fa-scanner"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Scan Jobs
+                    </span>
+
+                    <strong id="totalScanJobs">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             JOBS CARD
+        ================================================== -->
+
+        <div class="print-card">
+
+
+            <!-- CARD HEADER -->
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>
+                        Print & Scan Jobs
+                    </h3>
+
+                    <p>
+                        View and manage all printing
+                        and scanning activities.
+                    </p>
+
+                </div>
+
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="printSearch"
+                        placeholder="Search customer or document..."
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- TABLE -->
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                #
+                            </th>
+
+                            <th>
+                                Customer
+                            </th>
+
+                            <th>
+                                Document
+                            </th>
+
+                            <th>
+                                Type
+                            </th>
+
+                            <th>
+                                Pages
+                            </th>
+
+                            <th>
+                                Amount
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="printJobsTableBody">
+
+                        <tr>
+
+                            <td
+                                colspan="8"
+                                class="empty-table">
+
+                                <div>
+
+                                    <i class="fa-solid fa-print"></i>
+
+                                    <h4>
+                                        No print jobs yet
+                                    </h4>
+
+                                    <p>
+                                        Add your first print
+                                        or scan job to get started.
+                                    </p>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<!-- PRINT & SCAN SCRIPT -->
+
+<script src="../js/print-scan.js"></script>
+<script src="../js/common.js"></script>
+</body>
+
+</html>

@@ -1,90 +1,90 @@
+
 /* =========================================================
-   AK CYBER MANAGEMENT SYSTEM
-   DASHBOARD — LIVE DATA
-   ========================================================= */
+AK CYBER MANAGEMENT SYSTEM
+DASHBOARD — LIVE DATA + PROFILE SYNC
+========================================================= */
 
 "use strict";
 
-
 /* =========================================================
-   STORAGE KEYS
+STORAGE KEYS
 ========================================================= */
 
-const DASHBOARD_CUSTOMERS_KEY =
-    "akCyberCustomers";
-
-const DASHBOARD_APPLICATIONS_KEY =
-    "akCyberApplications";
-
-const DASHBOARD_PAYMENTS_KEY =
-    "akCyberPayments";
-
+const DASHBOARD_CUSTOMERS_KEY = "akCyberCustomers";
+const DASHBOARD_APPLICATIONS_KEY = "akCyberApplications";
+const DASHBOARD_PAYMENTS_KEY = "akCyberPayments";
+const DASHBOARD_PROFILE_KEY = "akCyberProfile";
 
 /* =========================================================
-   HELPERS
+HELPERS
 ========================================================= */
 
-function dashboardGetStorage(
-    key
-) {
-
+function dashboardGetStorage(key) {
     try {
-
-        const data =
-            localStorage.getItem(key);
+        const data = localStorage.getItem(key);
 
         if (!data) {
             return [];
         }
 
-        const parsed =
-            JSON.parse(data);
+        const parsed = JSON.parse(data);
 
-        return Array.isArray(parsed)
-            ? parsed
-            : [];
+        return Array.isArray(parsed) ? parsed : [];
 
     } catch (error) {
-
-        console.error(
-            `Unable to read ${key}:`,
-            error
-        );
-
+        console.error(`Unable to read ${key}:`, error);
         return [];
-
     }
-
 }
 
+function dashboardGetProfile() {
+    try {
+        const data = localStorage.getItem(DASHBOARD_PROFILE_KEY);
+
+        if (!data) {
+            return {
+                name: "Admin",
+                email: "",
+                phone: ""
+            };
+        }
+
+        const profile = JSON.parse(data);
+
+        return {
+            name: profile.name || "Admin",
+            email: profile.email || "",
+            phone: profile.phone || ""
+        };
+
+    } catch (error) {
+        console.error("Unable to load profile:", error);
+
+        return {
+            name: "Admin",
+            email: "",
+            phone: ""
+        };
+    }
+}
 
 function dashboardToday() {
+    const today = new Date();
 
-    const today =
-        new Date();
+    const year = today.getFullYear();
 
-    const year =
-        today.getFullYear();
+    const month = String(
+        today.getMonth() + 1
+    ).padStart(2, "0");
 
-    const month =
-        String(
-            today.getMonth() + 1
-        ).padStart(2, "0");
-
-    const day =
-        String(
-            today.getDate()
-        ).padStart(2, "0");
+    const day = String(
+        today.getDate()
+    ).padStart(2, "0");
 
     return `${year}-${month}-${day}`;
-
 }
 
-
-function dashboardCurrency(
-    amount
-) {
-
+function dashboardCurrency(amount) {
     return new Intl.NumberFormat(
         "en-IN",
         {
@@ -92,15 +92,43 @@ function dashboardCurrency(
             currency: "INR",
             maximumFractionDigits: 0
         }
-    ).format(
-        Number(amount) || 0
-    );
-
+    ).format(Number(amount) || 0);
 }
 
+/* =========================================================
+PROFILE SYNC
+========================================================= */
+
+function updateDashboardProfile() {
+
+    const profile = dashboardGetProfile();
+
+    const adminName =
+        profile.name || "Admin";
+
+    const adminNameElement =
+        document.getElementById(
+            "dashboardAdminName"
+        );
+
+    if (adminNameElement) {
+        adminNameElement.textContent =
+            adminName;
+    }
+
+    const welcomeElement =
+        document.getElementById(
+            "dashboardWelcomeText"
+        );
+
+    if (welcomeElement) {
+        welcomeElement.textContent =
+            `Welcome back, ${adminName}`;
+    }
+}
 
 /* =========================================================
-   LOAD DASHBOARD DATA
+LOAD DASHBOARD DATA
 ========================================================= */
 
 function updateDashboardStatistics() {
@@ -110,22 +138,18 @@ function updateDashboardStatistics() {
             DASHBOARD_CUSTOMERS_KEY
         );
 
-
     const applications =
         dashboardGetStorage(
             DASHBOARD_APPLICATIONS_KEY
         );
-
 
     const payments =
         dashboardGetStorage(
             DASHBOARD_PAYMENTS_KEY
         );
 
-
     const today =
         dashboardToday();
-
 
     /* =====================================================
        TOTAL CUSTOMERS
@@ -136,14 +160,10 @@ function updateDashboardStatistics() {
             "dashboardTotalCustomers"
         );
 
-
     if (totalCustomerElement) {
-
         totalCustomerElement.textContent =
             customers.length;
-
     }
-
 
     /* =====================================================
        APPLICATIONS
@@ -154,7 +174,6 @@ function updateDashboardStatistics() {
             "[data-dashboard-applications]"
         );
 
-
     applicationElements.forEach(
         element => {
 
@@ -164,28 +183,22 @@ function updateDashboardStatistics() {
         }
     );
 
-
     /* =====================================================
        TODAY'S INCOME
     ===================================================== */
 
     const todayIncome =
         payments.reduce(
-            (
-                total,
-                payment
-            ) => {
+            (total, payment) => {
 
                 if (
                     payment.date ===
                     today
                 ) {
-
                     return total +
                         Number(
                             payment.amount
                         );
-
                 }
 
                 return total;
@@ -194,12 +207,10 @@ function updateDashboardStatistics() {
             0
         );
 
-
     const incomeElements =
         document.querySelectorAll(
             "[data-dashboard-income]"
         );
-
 
     incomeElements.forEach(
         element => {
@@ -212,16 +223,14 @@ function updateDashboardStatistics() {
         }
     );
 
-
     /* =====================================================
-       APPLICATION EMPTY TEXT
+       APPLICATION STATUS
     ===================================================== */
 
     const applicationSmall =
         document.querySelector(
             "[data-dashboard-application-status]"
         );
-
 
     if (applicationSmall) {
 
@@ -233,19 +242,16 @@ function updateDashboardStatistics() {
                         ? "application"
                         : "applications"
                 } recorded`;
-
     }
 
-
     /* =====================================================
-       CUSTOMER EMPTY TEXT
+       CUSTOMER STATUS
     ===================================================== */
 
     const customerSmall =
         document.querySelector(
             "[data-dashboard-customer-status]"
         );
-
 
     if (customerSmall) {
 
@@ -257,9 +263,7 @@ function updateDashboardStatistics() {
                         ? "customer"
                         : "customers"
                 } registered`;
-
     }
-
 
     /* =====================================================
        INCOME STATUS
@@ -270,16 +274,13 @@ function updateDashboardStatistics() {
             "[data-dashboard-income-status]"
         );
 
-
     if (incomeSmall) {
 
         incomeSmall.textContent =
             todayIncome === 0
                 ? "Today's collection"
                 : "Collected today";
-
     }
-
 
     /* =====================================================
        PRINT JOBS
@@ -290,12 +291,10 @@ function updateDashboardStatistics() {
             "akCyberPrintJobs"
         );
 
-
     const printJobElements =
         document.querySelectorAll(
             "[data-dashboard-print-jobs]"
         );
-
 
     printJobElements.forEach(
         element => {
@@ -309,33 +308,26 @@ function updateDashboardStatistics() {
 
             element.textContent =
                 todayPrintJobs.length;
-
         }
     );
-
 
     console.log(
         "Dashboard statistics updated."
     );
-
 }
 
-
 /* =========================================================
-   ADD DATA ATTRIBUTES TO EXISTING CARDS
+ADD DATA ATTRIBUTES TO EXISTING CARDS
 ========================================================= */
 
 function prepareDashboardCards() {
 
-    /*
-     * Applications card
-     */
+    /* Applications */
 
     const applicationCard =
         document.querySelector(
             ".stats-grid .stat-card:nth-child(2)"
         );
-
 
     if (applicationCard) {
 
@@ -349,16 +341,13 @@ function prepareDashboardCards() {
                 "small"
             );
 
-
         if (number) {
 
             number.setAttribute(
                 "data-dashboard-applications",
                 ""
             );
-
         }
-
 
         if (small) {
 
@@ -366,21 +355,15 @@ function prepareDashboardCards() {
                 "data-dashboard-application-status",
                 ""
             );
-
         }
-
     }
 
-
-    /*
-     * Income card
-     */
+    /* Income */
 
     const incomeCard =
         document.querySelector(
             ".stats-grid .stat-card:nth-child(3)"
         );
-
 
     if (incomeCard) {
 
@@ -394,16 +377,13 @@ function prepareDashboardCards() {
                 "small"
             );
 
-
         if (number) {
 
             number.setAttribute(
                 "data-dashboard-income",
                 ""
             );
-
         }
-
 
         if (small) {
 
@@ -411,21 +391,15 @@ function prepareDashboardCards() {
                 "data-dashboard-income-status",
                 ""
             );
-
         }
-
     }
 
-
-    /*
-     * Print card
-     */
+    /* Print */
 
     const printCard =
         document.querySelector(
             ".stats-grid .stat-card:nth-child(4)"
         );
-
 
     if (printCard) {
 
@@ -434,28 +408,21 @@ function prepareDashboardCards() {
                 "strong"
             );
 
-
         if (number) {
 
             number.setAttribute(
                 "data-dashboard-print-jobs",
                 ""
             );
-
         }
-
     }
 
-
-    /*
-     * Customer card
-     */
+    /* Customer */
 
     const customerCard =
         document.querySelector(
             ".stats-grid .stat-card:nth-child(1)"
         );
-
 
     if (customerCard) {
 
@@ -464,23 +431,18 @@ function prepareDashboardCards() {
                 "small"
             );
 
-
         if (small) {
 
             small.setAttribute(
                 "data-dashboard-customer-status",
                 ""
             );
-
         }
-
     }
-
 }
 
-
 /* =========================================================
-   RECENT ACTIVITY
+RECENT ACTIVITY
 ========================================================= */
 
 function updateRecentActivity() {
@@ -490,32 +452,26 @@ function updateRecentActivity() {
             ".dashboard-card .empty-state"
         );
 
-
     if (!container) {
         return;
     }
-
 
     const customers =
         dashboardGetStorage(
             DASHBOARD_CUSTOMERS_KEY
         );
 
-
     const applications =
         dashboardGetStorage(
             DASHBOARD_APPLICATIONS_KEY
         );
-
 
     const payments =
         dashboardGetStorage(
             DASHBOARD_PAYMENTS_KEY
         );
 
-
     const activities = [];
-
 
     /* Customers */
 
@@ -544,7 +500,6 @@ function updateRecentActivity() {
             }
         );
 
-
     /* Applications */
 
     applications
@@ -569,7 +524,6 @@ function updateRecentActivity() {
 
             }
         );
-
 
     /* Payments */
 
@@ -596,27 +550,12 @@ function updateRecentActivity() {
             }
         );
 
-
-    /*
-     * Nothing yet
-     */
-
     if (activities.length === 0) {
-
         return;
-
     }
 
-
-    /*
-     * Sort latest first
-     */
-
     activities.sort(
-        (
-            a,
-            b
-        ) => {
+        (a, b) => {
 
             return (
                 new Date(b.date || 0) -
@@ -626,10 +565,8 @@ function updateRecentActivity() {
         }
     );
 
-
     const latest =
         activities.slice(0, 5);
-
 
     container.innerHTML = `
 
@@ -655,19 +592,15 @@ function updateRecentActivity() {
                         <div class="activity-info">
 
                             <strong>
-
                                 ${dashboardEscape(
                                     activity.title
                                 )}
-
                             </strong>
 
                             <span>
-
                                 ${dashboardEscape(
                                     activity.type
                                 )}
-
                             </span>
 
                         </div>
@@ -680,56 +613,38 @@ function updateRecentActivity() {
         </div>
 
     `;
-
 }
 
-
 /* =========================================================
-   ESCAPE HTML
+ESCAPE HTML
 ========================================================= */
 
-function dashboardEscape(
-    value
-) {
+function dashboardEscape(value) {
 
     return String(value)
-        .replaceAll(
-            "&",
-            "&amp;"
-        )
-        .replaceAll(
-            "<",
-            "&lt;"
-        )
-        .replaceAll(
-            ">",
-            "&gt;"
-        )
-        .replaceAll(
-            '"',
-            "&quot;"
-        )
-        .replaceAll(
-            "'",
-            "&#039;"
-        );
-
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
 }
 
-
 /* =========================================================
-   AUTO REFRESH
+AUTO REFRESH
 ========================================================= */
 
 function startDashboardAutoRefresh() {
+
+    updateDashboardProfile();
 
     updateDashboardStatistics();
 
     updateRecentActivity();
 
-
     setInterval(
         () => {
+
+            updateDashboardProfile();
 
             updateDashboardStatistics();
 
@@ -738,46 +653,169 @@ function startDashboardAutoRefresh() {
         },
         5000
     );
+}
+
+/* =========================================================
+INITIALIZE
+========================================================= */
+
+document.addEventListener(
+"DOMContentLoaded",
+() => {
+
+
+    prepareDashboardCards();
+
+    loadDashboardSettings();
+
+    startDashboardAutoRefresh();
 
 }
 
 
-/* =========================================================
-   INITIALIZE
-========================================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-        prepareDashboardCards();
-
-        startDashboardAutoRefresh();
-
-    }
 );
 
-
 /* =========================================================
-   ALSO RUN IF SCRIPT LOADS AFTER DOM
+ALSO RUN IF SCRIPT LOADS AFTER DOM
 ========================================================= */
 
 if (
-    document.readyState ===
-    "interactive" ||
-    document.readyState ===
-    "complete"
+    document.readyState === "interactive" ||
+    document.readyState === "complete"
 ) {
 
     prepareDashboardCards();
 
+    updateDashboardProfile();
+
     updateDashboardStatistics();
 
     updateRecentActivity();
-
 }
-
 
 console.log(
     "Dashboard module initialized successfully."
 );
+
+/* =========================================================
+LOAD SETTINGS INTO DASHBOARD
+========================================================= */
+
+function loadDashboardSettings() {
+
+
+try {
+
+    const stored =
+        localStorage.getItem("akCyberSettings");
+
+    if (!stored) {
+        return;
+    }
+
+    const settings =
+        JSON.parse(stored);
+
+    const adminName =
+        settings.adminName || "Admin";
+
+    const businessName =
+        settings.businessName || "AK CYBER";
+
+
+    /* =================================================
+       DASHBOARD ADMIN NAME
+    ================================================= */
+
+    const adminElement =
+        document.getElementById(
+            "dashboardAdminName"
+        );
+
+    if (adminElement) {
+
+        adminElement.textContent =
+            adminName;
+
+    }
+
+
+    /* =================================================
+       WELCOME TEXT
+    ================================================= */
+
+    const welcomeElement =
+        document.getElementById(
+            "dashboardWelcomeText"
+        );
+
+    if (welcomeElement) {
+
+        welcomeElement.textContent =
+            `Welcome back, ${adminName}`;
+
+    }
+
+
+    /* =================================================
+       DASHBOARD BUSINESS NAME
+    ================================================= */
+
+    const businessElement =
+        document.getElementById(
+            "dashboardBusinessName"
+        );
+
+    if (businessElement) {
+
+        businessElement.textContent =
+            `Welcome to ${businessName} 🌸`;
+
+    }
+
+
+    /* =================================================
+       SIDEBAR BUSINESS NAME
+    ================================================= */
+
+    const sidebarBusinessElement =
+        document.getElementById(
+            "dashboardSidebarBusinessName"
+        );
+
+    if (sidebarBusinessElement) {
+
+        const parts =
+            businessName.trim().split(/\s+/);
+
+        if (parts.length > 1) {
+
+            const lastWord =
+                parts.pop();
+
+            const firstPart =
+                parts.join(" ");
+
+            sidebarBusinessElement.innerHTML =
+                `${dashboardEscape(firstPart)} <span>${dashboardEscape(lastWord)}</span>`;
+
+        } else {
+
+            sidebarBusinessElement.textContent =
+                businessName;
+
+        }
+
+    }
+
+} catch (error) {
+
+    console.error(
+        "Dashboard settings load error:",
+        error
+    );
+
+}
+
+
+}
