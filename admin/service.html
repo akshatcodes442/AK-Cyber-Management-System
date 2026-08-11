@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#c86b98">
+
+    <title>
+        AK Cyber Management System | Services
+    </title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Services CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/services.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- MOBILE OVERLAY -->
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay">
+    </div>
+
+
+    <!-- SIDEBAR -->
+    <aside
+        class="sidebar"
+        id="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="sidebar-logo-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div>
+                <h2>
+                    AK <span>CYBER</span>
+                </h2>
+
+                <p>
+                    MANAGEMENT
+                </p>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+            <a
+                href="dashboard.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="customers.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+                    Customers
+                </span>
+
+            </a>
+
+
+            <a
+                href="applications.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-file-invoice"></i>
+
+                <span>
+                    Applications
+                </span>
+
+            </a>
+
+
+            <a
+                href="payments.html"
+                class="nav-item">
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                <span>
+                    Payments
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item">
+
+                <i class="fa-solid fa-print"></i>
+
+                <span>
+                    Print & Scan
+                </span>
+
+            </a>
+
+
+            <p class="nav-title">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="service.html"
+                class="nav-item active">
+
+                <i class="fa-solid fa-box"></i>
+
+                <span>
+                    Services
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                id="logoutBtn"
+                class="logout-btn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <button
+                id="menuBtn"
+                class="menu-btn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div class="page-title">
+
+                <h1>
+                    Services
+                </h1>
+
+                <p>
+                    Manage your cyber cafe services
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="icon-btn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="admin-profile">
+
+                    <div class="profile-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- SERVICES BODY -->
+        <section class="services-body">
+
+
+            <!-- PAGE HEADER -->
+            <div class="services-header">
+
+                <div>
+
+                    <span class="section-small">
+                        MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Service Management
+                    </h2>
+
+                    <p>
+                        Add, edit and manage all services
+                        offered by AK Cyber.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="add-service-btn"
+                    id="addServiceBtn">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add Service
+
+                </button>
+
+            </div>
+
+
+            <!-- SERVICE STATS -->
+            <div class="service-stats">
+
+
+                <div class="service-stat-card">
+
+                    <div class="service-stat-icon">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+
+                    <div>
+                        <span>
+                            Total Services
+                        </span>
+
+                        <strong id="totalServices">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="service-stat-card">
+
+                    <div class="service-stat-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+                        <span>
+                            Active Services
+                        </span>
+
+                        <strong id="activeServices">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="service-stat-card">
+
+                    <div class="service-stat-icon">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </div>
+
+                    <div>
+                        <span>
+                            Inactive Services
+                        </span>
+
+                        <strong id="inactiveServices">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- SERVICES TABLE -->
+            <div class="services-card">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            All Services
+                        </h3>
+
+                        <p>
+                            Manage your available services
+                        </p>
+
+                    </div>
+
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="serviceSearch"
+                            placeholder="Search services..."
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    #
+                                </th>
+
+                                <th>
+                                    Service
+                                </th>
+
+                                <th>
+                                    Category
+                                </th>
+
+                                <th>
+                                    Price
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="servicesTableBody">
+
+                            <tr>
+
+                                <td
+                                    colspan="6"
+                                    class="empty-table">
+
+                                    <div>
+
+                                        <i class="fa-solid fa-box-open"></i>
+
+                                        <h4>
+                                            No services yet
+                                        </h4>
+
+                                        <p>
+                                            Add your first service
+                                            to get started.
+                                        </p>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- SERVICES SCRIPT -->
+    <script src="../js/services.js"></script>
+
+</body>
+
+</html>
