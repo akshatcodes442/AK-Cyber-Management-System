@@ -21,7 +21,7 @@ const totalIncome = document.getElementById("reportTotalIncome");
 const totalServices = document.getElementById("reportTotalServices");
 
 const refreshBtn = document.getElementById("refreshReports");
-const exportBtn = document.getElementById("exportReport");
+const exportBtn = document.getElementById("exportReportBtn");
 const dateBtn = document.getElementById("reportDateBtn");
 
 const customerOverview = document.getElementById("customerOverview");
