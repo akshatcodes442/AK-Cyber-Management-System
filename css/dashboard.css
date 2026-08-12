@@ -971,7 +971,7 @@ body {
             transform 0.3s ease;
     }
 
-    .sidebar.active {
+    .sidebar.open {
         transform:
             translateX(0);
     }
